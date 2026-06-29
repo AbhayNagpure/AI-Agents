@@ -32,7 +32,7 @@ const getUsersByPlanDeclaration= {
     description: 'get a list of all users subscribed to a specific plan',
     parameters: {
         type: Type.OBJECT,
-        propertie: { plan : {
+        properties: { plan : {
             type: Type.STRING,
             description: "The plan name",
         }},
@@ -46,7 +46,7 @@ const getUsersByPlanDeclaration= {
 app.use(express.static('public'));
 
 //TODO: we will build our Agentic endpoint here in step 5.3
-app.post('/api/chat', async (res, req) => {
+app.post('/api/chat', async (req, res) => {
     const userMessage = req.body.message;
 
     try {
